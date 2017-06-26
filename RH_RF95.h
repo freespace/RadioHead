@@ -751,6 +751,8 @@ public:
     /// \return SNR of the last received message in dB
     int lastSNR();
 
+    /// Returns the number of bytes waiting in receive buffer
+    uint16_t inWaiting();
 protected:
     /// This is a low level function to handle the interrupts for one instance of RH_RF95.
     /// Called automatically by isr*()
