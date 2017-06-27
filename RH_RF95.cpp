@@ -464,7 +464,8 @@ int RH_RF95::frequencyError()
 
 uint16_t RH_RF95::inWaiting()
 {
-  return _bufLen;
+  if (_rxBufValid) return _bufLen - RH_RF95_HEADER_LEN;
+  else return 0;
 }
 
 int RH_RF95::lastSNR()
